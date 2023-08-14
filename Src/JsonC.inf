@@ -1,0 +1,146 @@
+#/** @file
+# Port of Json-c in Tianocore EDK2 Platform, Please find below License information
+# of json-c lib
+# Copyright (c) 2009-2012 Eric Haszlakiewicz
+#
+# Permission is hereby granted, free of charge, to any person obtaining a
+# copy of this software and associated documentation files (the "Software"),
+# to deal in the Software without restriction, including without limitation
+# the rights to use, copy, modify, merge, publish, distribute, sublicense,
+# and/or sell copies of the Software, and to permit persons to whom the
+# Software is furnished to do so, subject to the following conditions:
+#
+# The above copyright notice and this permission notice shall be included
+# in all copies or substantial portions of the Software.
+#
+# THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
+# IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
+# FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
+# AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
+# LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
+# OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
+# SOFTWARE.
+#
+# ----------------------------------------------------------------
+#
+# Copyright (c) 2004, 2005 Metaparadigm Pte Ltd
+#
+# Permission is hereby granted, free of charge, to any person obtaining a
+# copy of this software and associated documentation files (the "Software"),
+# to deal in the Software without restriction, including without limitation
+# the rights to use, copy, modify, merge, publish, distribute, sublicense,
+# and/or sell copies of the Software, and to permit persons to whom the
+# Software is furnished to do so, subject to the following conditions:
+#
+# The above copyright notice and this permission notice shall be included
+# in all copies or substantial portions of the Software.
+#
+# THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
+# IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
+# FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
+# AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
+# LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
+# OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
+# SOFTWARE.
+#
+#
+#  Copyright (c) 2009-2022, Intel Corporation.
+#
+#  All rights reserved. This program and the accompanying materials
+#  are licensed and made available under the terms and conditions of the BSD License
+#  which accompanies this distribution. The full text of the license may be found at
+#  http://opensource.org/licenses/bsd-license.php
+#  THE PROGRAM IS DISTRIBUTED UNDER THE BSD LICENSE ON AN "AS IS" BASIS,
+#  WITHOUT WARRANTIES OR REPRESENTATIONS OF ANY KIND, EITHER EXPRESS OR IMPLIED.
+#
+#
+#**/
+
+[Defines]
+  INF_VERSION                    = 0x00010005
+  BASE_NAME                      = JsonCPkg
+  FILE_GUID                      = 66997f9f-931b-46a9-8dd3-cf1f5a4e1a80
+  MODULE_TYPE                    = UEFI_APPLICATION
+  VERSION_STRING                 = 1.0
+  LIBRARY_CLASS                  = LibJsonC
+
+#
+# The following information is for reference only and not required by the build tools.
+#
+#  VALID_ARCHITECTURES           = IA32 X64
+#
+
+[Sources]
+	#json_object.h
+	#json_tokener.h
+	json_pointer.c
+	debug.c
+	random_seed.c
+	#math_compat.h
+	#config.h
+	json_visit.c
+	#printbuf.h
+	arraylist.c
+	#linkhash.h
+	#json_visit.h
+	#vasprintf_compat.h
+	printbuf.c
+	json_util.c
+	#json_inttypes.h
+	#json_object_iterator.h
+	#snprintf_compat.h
+	#json_c_version.h
+	#json_pointer.h
+	#json_object_private.h
+	linkhash.c
+	libjson.c
+	#json.h
+	strerror_override.c
+	#strdup_compat.h
+	#strerror_override.h
+	#json_types.h
+	#arraylist.h
+	json_object_iterator.c
+	#json_util.h
+	json_tokener.c
+	#random_seed.h
+	json_c_version.c
+	#debug.h
+	#json_config.h
+	json_object.c
+
+[Packages]
+  StdLib/StdLib.dec
+  MdePkg/MdePkg.dec
+  MdeModulePkg/MdeModulePkg.dec
+  JsonCPkg/JsconCPkg.dec
+  ShellPkg/ShellPkg.dec
+
+[LibraryClasses]
+  #UefiApplicationEntryPoint
+  #UefiLib # Print()
+  #HiiLib
+  #ShellLib
+  #PrintLib
+  #DebugLib
+  #ShellCEntryLib
+  BaseLib
+  BaseMemoryLib
+  MemoryAllocationLib
+  LibC
+  LibStdio
+  LibMath
+  LibStdLib
+  #LibString
+  #DevConsole
+  DevShell
+
+[Guids]
+
+[Ppis]
+
+[Protocols]
+
+[FeaturePcd]
+
+[Pcd]
